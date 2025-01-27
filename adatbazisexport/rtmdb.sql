@@ -100,9 +100,12 @@ INSERT INTO `products` (`id`, `name`, `price`, `image_url_1`, `image_url_2`, `im
 
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
-  `username` varchar(50) NOT NULL,
+  `first_name` varchar(100) NOT NULL,
+  `last_name` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
-  `password` varchar(255) NOT NULL
+  `password` varchar(255) NOT NULL,
+  `role` varchar(20) NOT NULL DEFAULT 'client',
+  `created_at` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -143,7 +146,6 @@ ALTER TABLE `products`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `username` (`username`),
   ADD UNIQUE KEY `email` (`email`);
 
 --
