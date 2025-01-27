@@ -29,8 +29,8 @@ if (isset($_SESSION["email"])) {
         <div>
             <ul id="navbar">
                 <li><a href="index.php">Főoldal</a></li>
-                <li><a href="ferfi.html">Férfi ruhák</a></li>
-                <li><a href="noiminden.html">Női ruhák</a></li>
+                <li><a href="ferfi.php">Férfi ruhák</a></li>
+                <li><a href="no.php">Női ruhák</a></li>
             </ul>
         </div>
         <div>   
@@ -65,8 +65,8 @@ if (isset($_SESSION["email"])) {
             <div class="offcanvas-body">
                 <ul>
                     <li><a href="index.php">Főoldal</a></li>
-                    <li><a href="ferfi.html">Férfi ruhák</a></li>
-                    <li><a href="noiminden.html">Női ruhák</a></li>
+                    <li><a href="ferfi.php">Férfi ruhák</a></li>
+                    <li><a href="no.php">Női ruhák</a></li>
                 </ul>
             </div>
           </div>
