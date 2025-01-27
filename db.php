@@ -3,7 +3,7 @@ function getDatabaseConnection() {
     $servername = "localhost";
     $username = "root";
     $password = "";
-    $database = "storedb";
+    $database = "rtmdb";
 
     // Kapcsolat létrehozása
     $connection = new mysqli($servername, $username, $password, $database);

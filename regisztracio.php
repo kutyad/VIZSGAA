@@ -57,7 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $statement->store_result();
     if ($statement->num_rows > 0) {
-        $email_error = "Ez az Email már használt";
+        $email_error = "Email formátum nem megfelelő";
         $error = true;
     }
 
@@ -118,8 +118,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 ?>
 
-    <section>
-        <div class="bejelentkezes">
+    <section id="bejelentkezes">
+        <div class="login-section">
             <form class="modalbejbackground-content animate" action="#" method="post">
             <div class="fobejszoveg">
                 <label for="email"><b>Regisztráció</b></label>

@@ -52,7 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 ?>
 
-<section>
+<section id="bejelentkezes">
         <!-- Bejelentkezés -->
         <div class="login-section">
           <form class="modalbejbackground-content animate" action="#" method="post">
