@@ -476,9 +476,21 @@ footer h5{
     width: 100%;
 }
 
-/* regiszt,bejel vége */
+#productpageadatok {
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertically centers content */
+}
+.productpageform-group {
+    margin-top: 30px;
+    margin-bottom: 40px; /* Adds spacing between form elements */
+}
 
-
+#termekpage {
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
 
 /*
 #checkout{
