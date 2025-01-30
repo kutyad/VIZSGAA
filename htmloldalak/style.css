@@ -16,6 +16,7 @@
 
 body {
     width: 100%;
+    background-color: rgb(235, 235, 235);
 }
 
 /* navbar */
@@ -32,6 +33,7 @@ body {
     border-bottom: 1px solid rgb(0, 0, 0);
     flex-direction: row;
     position: sticky;
+    padding: 8px 80px;
 }
 
 #header2{
@@ -171,17 +173,17 @@ ul{
 
 /* index carousel */
 
-.carousel-item {
+#carouselresz .carousel-item {
     height: 800px;
     position: relative;
 }
-.carousel-item img {
+#carouselresz .carousel-item img {
     height: 100%;
     width: 100%;
     object-fit: cover;
     object-position: center;
 }
-.carousel-overlay {
+#carouselresz .carousel-overlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -190,7 +192,7 @@ ul{
     background: rgba(0, 0, 0, 0.2);
     z-index: 1;
 }
-.carousel-caption {
+#carouselresz .carousel-caption {
     position: absolute;
     bottom: 10%;
     left: 50%;
@@ -198,21 +200,21 @@ ul{
     z-index: 2;
     text-align: center;
 }
-.carousel-caption h6 {
+#carouselresz .carousel-caption h6 {
     color: whitesmoke;
     margin-bottom: 10px;
 }
-.carousel-caption h2 {
+#carouselresz .carousel-caption h2 {
     color: white;
     margin-bottom: 20px;
 }
-.carousel-caption .btn {
+#carouselresz .carousel-caption .btn {
     color: white;
     background-color: transparent;
     border: 1px solid white;
 }
 
-.carousel-caption .btn:hover {
+#carouselresz .carousel-caption .btn:hover {
     color: black;
     background-color: white;
     border: 1px solid white;
@@ -276,6 +278,7 @@ ul{
     text-align:center;
     border-top: 2px solid black;
     border-bottom: 2px solid black;
+    background-color: white;
 }
   
 .ferfigorgmenu a {
@@ -382,6 +385,36 @@ ul{
     height: 40px;
 }
 /* ferfi női termeket/produktok vége */
+
+/* termekpage */
+
+#termekpage{
+    padding-bottom: 50px;
+}
+
+.productermekkepadat{
+    border: 1px solid rgb(174, 174, 174);
+    padding: 10px;
+    background-color: white;
+}
+
+#productpageadatok {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertically centers content */
+    padding: 50px 30px;
+}
+#productpageadatok .form-group {
+    margin-bottom: 15px; /* Adds spacing between form elements */
+}
+
+#termekpage .carousel-item img {
+    object-fit: cover;
+    object-position: center;
+} 
+
+/* termekpage vége */ 
+
 
 /* footer */
 
