@@ -392,6 +392,10 @@ ul{
     padding-bottom: 50px;
 }
 
+#termekpage .thumbnail {
+    cursor: pointer;
+}
+
 .productermekkepadat{
     border: 1px solid rgb(174, 174, 174);
     padding: 10px;
@@ -401,11 +405,11 @@ ul{
 #productpageadatok {
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Vertically centers content */
+    justify-content: center;
     padding: 50px 30px;
 }
 #productpageadatok .form-group {
-    margin-bottom: 15px; /* Adds spacing between form elements */
+    margin-bottom: 15px;
 }
 
 #termekpage .carousel-item img {
