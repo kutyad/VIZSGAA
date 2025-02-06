@@ -153,7 +153,6 @@ ul{
 }
 
 .indexferficards  .card-img-top {
-    border: 1px solid black;
     object-fit: cover;
 }
 
@@ -162,12 +161,11 @@ ul{
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid black;
 }
 
 .indexferficards{
     padding-bottom: 50px;
-    border-bottom: 2px solid black;
+    border-bottom: 1px solid black;
 }
 
 /* card stílusok vége */
@@ -299,6 +297,14 @@ ul{
     text-align: center;
 }
 
+#ferfiujtermekekindex{
+    text-align: left;
+}
+
+#noiujtermekekindex{
+    text-align: right;
+}
+
 #ferfitermekcards {
     padding-bottom: 50px;
     border-bottom: 2px solid black;
@@ -381,7 +387,7 @@ ul{
 #ferfitermekcards .card:hover .carousel-control-next-icon,
 #ferfitermekcards .card:hover .carousel-control-prev-icon {
     display:block;
-    width: 60px;
+    width: 100%;
     filter: invert(1);
     height: 40px;
 }
@@ -396,6 +402,7 @@ ul{
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    border-bottom: 1px solid black;
 }
 
 #termekpage .thumbnail {
@@ -407,6 +414,7 @@ ul{
     padding: 10px;
     background-color: white;
     width: 70%;
+    border-radius: 3px;
 }
 
 #productpageadatok {
