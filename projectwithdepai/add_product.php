@@ -1,0 +1,157 @@
+<?php
+require_once 'db.php';
+
+// Handle form submission
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Get form data
+    $product_name = $_POST["product_name"];
+    $product_price = $_POST["product_price"];
+    $product_xs_quantity = $_POST["product_xs_quantity"];
+    $product_s_quantity = $_POST["product_s_quantity"];
+    $product_m_quantity = $_POST["product_m_quantity"];
+    $product_l_quantity = $_POST["product_l_quantity"];
+    $product_xl_quantity = $_POST["product_xl_quantity"];
+    $gender = $_POST["gender"];
+    $category = $_POST["category"];
+
+    $product_image_1 = uploadImage($_FILES["product_image_1"]);
+    $product_image_2 = uploadImage($_FILES["product_image_2"]);
+    $product_image_3 = uploadImage($_FILES["product_image_3"]);
+    $product_image_4 = uploadImage($_FILES["product_image_4"]);
+
+    // Get database connection
+    $conn = getDatabaseConnection();
+
+    // Insert data into the database
+    $stmt = $conn->prepare("CALL InsertProduct(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+    $stmt->bind_param(
+        "sissssiiiiiss",
+        $product_name,
+        $product_price,
+        $product_image_1,
+        $product_image_2,
+        $product_image_3,
+        $product_image_4,
+        $product_xs_quantity,
+        $product_s_quantity,
+        $product_m_quantity,
+        $product_l_quantity,
+        $product_xl_quantity,
+        $gender,
+        $category
+    );
+
+    // Execute the stored procedure
+    if ($stmt->execute()) {
+        echo "Termék sikeresen hozzáadva!";
+    } else {
+        echo "Hiba: " . $stmt->error;
+    }
+
+    // Close the statement and the database connection
+    $stmt->close();
+    $conn->close();
+}
+
+// Function to handle image uploads
+function uploadImage($file) {
+    if ($file["error"] == UPLOAD_ERR_OK) {
+        $target_dir = "uploads/";
+        $target_file = $target_dir . basename($file["name"]);
+        move_uploaded_file($file["tmp_name"], $target_file);
+        return $target_file;
+    }
+    return null;
+}
+?>
+
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Termék hozzáadása</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Új termék hozzáadása</h1>
+        <form action="add_product.php" method="post" enctype="multipart/form-data">
+            <!-- Product Name -->
+            <div class="mb-3">
+                <label for="product_name" class="form-label">Termék neve</label>
+                <input type="text" class="form-control" id="product_name" name="product_name" required>
+            </div>
+
+            <!-- Product Price -->
+            <div class="mb-3">
+                <label for="product_price" class="form-label">Ár (HUF)</label>
+                <input type="number" class="form-control" id="product_price" name="product_price" required>
+            </div>
+
+            <!-- Product Images -->
+            <div class="mb-3">
+                <label for="product_image_1" class="form-label">1. kép</label>
+                <input type="file" class="form-control" id="product_image_1" name="product_image_1" required>
+            </div>
+            <div class="mb-3">
+                <label for="product_image_2" class="form-label">2. kép</label>
+                <input type="file" class="form-control" id="product_image_2" name="product_image_2" required>
+            </div>
+            <div class="mb-3">
+                <label for="product_image_3" class="form-label">3. kép</label>
+                <input type="file" class="form-control" id="product_image_3" name="product_image_3" required>
+            </div>
+            <div class="mb-3">
+                <label for="product_image_4" class="form-label">4. kép</label>
+                <input type="file" class="form-control" id="product_image_4" name="product_image_4" required>
+            </div>
+
+            <!-- Size Quantities -->
+            <div class="mb-3">
+                <label for="product_xs_quantity" class="form-label">XS méret mennyiség</label>
+                <input type="number" class="form-control" id="product_xs_quantity" name="product_xs_quantity" required>
+            </div>
+            <div class="mb-3">
+                <label for="product_s_quantity" class="form-label">S méret mennyiség</label>
+                <input type="number" class="form-control" id="product_s_quantity" name="product_s_quantity" required>
+            </div>
+            <div class="mb-3">
+                <label for="product_m_quantity" class="form-label">M méret mennyiség</label>
+                <input type="number" class="form-control" id="product_m_quantity" name="product_m_quantity" required>
+            </div>
+            <div class="mb-3">
+                <label for="product_l_quantity" class="form-label">L méret mennyiség</label>
+                <input type="number" class="form-control" id="product_l_quantity" name="product_l_quantity" required>
+            </div>
+            <div class="mb-3">
+                <label for="product_xl_quantity" class="form-label">XL méret mennyiség</label>
+                <input type="number" class="form-control" id="product_xl_quantity" name="product_xl_quantity" required>
+            </div>
+
+            <!-- Gender -->
+            <div class="mb-3">
+                <label for="gender" class="form-label">Nem</label>
+                <select class="form-select" id="gender" name="gender" required>
+                    <option value="Férfi">Férfi</option>
+                    <option value="Nő">Nő</option>
+                </select>
+            </div>
+
+            <!-- Category -->
+            <div class="mb-3">
+                <label for="category" class="form-label">Kategória</label>
+                <select class="form-select" id="category" name="category" required>
+                    <option value="Kabátok & Pulóverek">Kabátok & Pulóverek</option>
+                    <option value="Ingek & Pólók">Ingek & Pólók</option>
+                    <option value="Nadrágok & Rövidnadrágok">Nadrágok & Rövidnadrágok</option>
+                    <option value="Blúzok & Pólók">Blúzok & Pólók</option>
+                </select>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-primary">Termék hozzáadása</button>
+        </form>
+    </div>
+</body>
+</html>
