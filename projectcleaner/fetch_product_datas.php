@@ -45,6 +45,17 @@ function fetchMenIngekPolok() {
     return $products;
 }
 
+function fetchMenNadragokRovidnadragok() {
+    $conn = getDatabaseConnection();
+    $stmt = $conn->prepare("CALL GetMenNadragokRovidnadragok()");
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $products = $result->fetch_all(MYSQLI_ASSOC);
+    $stmt->close();
+    $conn->close();
+    return $products;
+}
+
 function fetchWomenKabatokPuloverek() {
     $conn = getDatabaseConnection();
     $stmt = $conn->prepare("CALL GetWomenKabatokPuloverek()");

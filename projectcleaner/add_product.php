@@ -1,9 +1,8 @@
 <?php
 require_once 'db.php';
 
-// Handle form submission
+// form adatok feldolg
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Get form data
     $product_name = $_POST["product_name"];
     $product_price = $_POST["product_price"];
     $product_xs_quantity = $_POST["product_xs_quantity"];
@@ -14,15 +13,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $gender = $_POST["gender"];
     $category = $_POST["category"];
 
+    // kepek
     $product_image_1 = uploadImage($_FILES["product_image_1"]);
     $product_image_2 = uploadImage($_FILES["product_image_2"]);
     $product_image_3 = uploadImage($_FILES["product_image_3"]);
     $product_image_4 = uploadImage($_FILES["product_image_4"]);
 
-    // Get database connection
+    // adatbazis konnekcio
     $conn = getDatabaseConnection();
 
-    // Insert data into the database
+    // adat beillesztese adatbazisba
     $stmt = $conn->prepare("CALL InsertProduct(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
     $stmt->bind_param(
         "sissssiiiiiss",
@@ -41,22 +41,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $category
     );
 
-    // Execute the stored procedure
+    // tarold eljaras futtatasa
     if ($stmt->execute()) {
         echo "Termék sikeresen hozzáadva!";
     } else {
         echo "Hiba: " . $stmt->error;
     }
 
-    // Close the statement and the database connection
+    // minden bezarasa
     $stmt->close();
     $conn->close();
 }
 
-// Function to handle image uploads
+// kepek feltoltese
 function uploadImage($file) {
     if ($file["error"] == UPLOAD_ERR_OK) {
-        $target_dir = "uploads/";
+        $target_dir = "uploads/"; // hely letrehozasa ha nem letezik
         $target_file = $target_dir . basename($file["name"]);
         move_uploaded_file($file["tmp_name"], $target_file);
         return $target_file;
@@ -77,19 +77,17 @@ function uploadImage($file) {
     <div class="container mt-5">
         <h1>Új termék hozzáadása</h1>
         <form action="add_product.php" method="post" enctype="multipart/form-data">
-            <!-- Product Name -->
+
             <div class="mb-3">
                 <label for="product_name" class="form-label">Termék neve</label>
                 <input type="text" class="form-control" id="product_name" name="product_name" required>
             </div>
 
-            <!-- Product Price -->
             <div class="mb-3">
                 <label for="product_price" class="form-label">Ár (HUF)</label>
                 <input type="number" class="form-control" id="product_price" name="product_price" required>
             </div>
 
-            <!-- Product Images -->
             <div class="mb-3">
                 <label for="product_image_1" class="form-label">1. kép</label>
                 <input type="file" class="form-control" id="product_image_1" name="product_image_1" required>
@@ -107,7 +105,6 @@ function uploadImage($file) {
                 <input type="file" class="form-control" id="product_image_4" name="product_image_4" required>
             </div>
 
-            <!-- Size Quantities -->
             <div class="mb-3">
                 <label for="product_xs_quantity" class="form-label">XS méret mennyiség</label>
                 <input type="number" class="form-control" id="product_xs_quantity" name="product_xs_quantity" required>
@@ -129,7 +126,6 @@ function uploadImage($file) {
                 <input type="number" class="form-control" id="product_xl_quantity" name="product_xl_quantity" required>
             </div>
 
-            <!-- Gender -->
             <div class="mb-3">
                 <label for="gender" class="form-label">Nem</label>
                 <select class="form-select" id="gender" name="gender" required>
@@ -138,7 +134,6 @@ function uploadImage($file) {
                 </select>
             </div>
 
-            <!-- Category -->
             <div class="mb-3">
                 <label for="category" class="form-label">Kategória</label>
                 <select class="form-select" id="category" name="category" required>
@@ -149,7 +144,6 @@ function uploadImage($file) {
                 </select>
             </div>
 
-            <!-- Submit Button -->
             <button type="submit" class="btn btn-primary">Termék hozzáadása</button>
         </form>
     </div>
