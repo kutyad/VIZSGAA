@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2025. Feb 18. 23:46
+-- Létrehozás ideje: 2025. Feb 20. 01:28
 -- Kiszolgáló verziója: 10.4.32-MariaDB
 -- PHP verzió: 8.2.12
 
@@ -26,7 +26,7 @@ DELIMITER $$
 -- Eljárások
 --
 CREATE DEFINER=`root`@`localhost` PROCEDURE `GetMenIngekPolok` ()   BEGIN
-    SELECT * FROM products WHERE gender = 'Férfi' AND category = 'Ingek & Pólók';
+    SELECT * FROM products WHERE gender = 'Férfi' AND category = 'Ingek & Pólók' ORDER BY created_at DESC;
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `GetMenKabatokPuloverek` ()   BEGIN
@@ -34,27 +34,35 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `GetMenKabatokPuloverek` ()   BEGIN
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `GetMenNadragokRovidnadragok` ()   BEGIN
-    SELECT * FROM products WHERE gender = 'Férfi' AND category = 'Nadrágok & Rövidnadrágok';
+    SELECT * FROM products WHERE gender = 'Férfi' AND category = 'Nadrágok & Rövidnadrágok' ORDER BY created_at DESC;
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `GetMenProducts` ()   BEGIN
-    SELECT * FROM products WHERE gender = 'Férfi';
+    SELECT * FROM products WHERE gender = 'Férfi' ORDER BY created_at DESC;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `GetNewestMenProducts` ()   BEGIN
+    SELECT * FROM products WHERE gender = 'Férfi' ORDER BY created_at DESC LIMIT 4;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `GetNewestWomenProducts` ()   BEGIN
+    SELECT * FROM products WHERE gender = 'Nő' ORDER BY created_at DESC LIMIT 4;
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `GetWomenBluzokPolok` ()   BEGIN
-    SELECT * FROM products WHERE gender = 'Nő' AND category = 'Blúzok & Pólók';
+    SELECT * FROM products WHERE gender = 'Nő' AND category = 'Blúzok & Pólók' ORDER BY created_at DESC;
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `GetWomenKabatokPuloverek` ()   BEGIN
-    SELECT * FROM products WHERE gender = 'Nő' AND category = 'Kabátok & Pulóverek';
+    SELECT * FROM products WHERE gender = 'Nő' AND category = 'Kabátok & Pulóverek' ORDER BY created_at DESC;
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `GetWomenNadragokRovidnadragok` ()   BEGIN
-    SELECT * FROM products WHERE gender = 'Nő' AND category = 'Nadrágok & Rövidnadrágok';
+    SELECT * FROM products WHERE gender = 'Nő' AND category = 'Nadrágok & Rövidnadrágok' ORDER BY created_at DESC;
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `GetWomenProducts` ()   BEGIN
-    SELECT * FROM products WHERE gender = 'Nő';
+    SELECT * FROM products WHERE gender = 'Nő' ORDER BY created_at DESC;
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `InsertProduct` (IN `p_product_name` VARCHAR(255), IN `p_product_price` INT, IN `p_product_image_1` VARCHAR(255), IN `p_product_image_2` VARCHAR(255), IN `p_product_image_3` VARCHAR(255), IN `p_product_image_4` VARCHAR(255), IN `p_product_xs_quantity` INT, IN `p_product_s_quantity` INT, IN `p_product_m_quantity` INT, IN `p_product_l_quantity` INT, IN `p_product_xl_quantity` INT, IN `p_gender` VARCHAR(50), IN `p_category` VARCHAR(255))   BEGIN

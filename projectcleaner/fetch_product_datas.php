@@ -88,4 +88,26 @@ function fetchWomenBluzokPolok() {
     $conn->close();
     return $products;
 }
+
+function fetchNewestMenProducts() {
+    $conn = getDatabaseConnection();
+    $stmt = $conn->prepare("CALL GetNewestMenProducts()");
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $products = $result->fetch_all(MYSQLI_ASSOC);
+    $stmt->close();
+    $conn->close();
+    return $products;
+}
+
+function fetchNewestWomenProducts() { 
+    $conn = getDatabaseConnection();
+    $stmt = $conn->prepare("CALL GetNewestWomenProducts()");
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $products = $result->fetch_all(MYSQLI_ASSOC);
+    $stmt->close();
+    $conn->close();
+    return $products;
+}
 ?>
