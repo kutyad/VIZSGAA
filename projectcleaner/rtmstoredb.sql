@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2025. Feb 20. 01:28
+-- Létrehozás ideje: 2025. Feb 20. 19:00
 -- Kiszolgáló verziója: 10.4.32-MariaDB
 -- PHP verzió: 8.2.12
 
@@ -47,6 +47,10 @@ END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `GetNewestWomenProducts` ()   BEGIN
     SELECT * FROM products WHERE gender = 'Nő' ORDER BY created_at DESC LIMIT 4;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `GetProductById` (IN `p_product_id` INT)   BEGIN
+    SELECT * FROM products WHERE product_id = p_product_id;
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `GetWomenBluzokPolok` ()   BEGIN
