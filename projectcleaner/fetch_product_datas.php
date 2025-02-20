@@ -110,4 +110,16 @@ function fetchNewestWomenProducts() {
     $conn->close();
     return $products;
 }
+
+function fetchProductById($product_id) {
+    $conn = getDatabaseConnection();
+    $stmt = $conn->prepare("CALL GetProductById(?)");
+    $stmt->bind_param("i", $product_id);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $product = $result->fetch_assoc();
+    $stmt->close();
+    $conn->close();
+    return $product;
+}
 ?>

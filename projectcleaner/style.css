@@ -66,7 +66,6 @@ body {
 .offcanvas-body li a,
 .navbarregbejgombok,
 .carouselgombtext,
-.ferfigorgmenu,
 .cardslinkek,
 .dropdown-item{
     text-decoration: none;
@@ -163,6 +162,7 @@ ul{
 }
 
 .indexferficards .card-text-box {
+    height: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -177,7 +177,7 @@ ul{
 /* index carousel */
 
 #carouselresz .carousel-item {
-    height: 900px;
+    height: 1000px;
     position: relative;
 }
 #carouselresz .carousel-item img {
@@ -235,9 +235,9 @@ ul{
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-image: url("manbanner.webp");
+    background-image: url("kepek/manbanner.webp");
     width: 100%;
-    height: 900px;
+    height: 1200px;
     background-size: cover;
     background-position: center;
 }
@@ -263,9 +263,9 @@ ul{
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-image: url("womanbanner.jpg");
+    background-image: url("kepek/womanbanner.jpg");
     width: 100%;
-    height: 900px;
+    height: 1200px;
     background-size: cover;
     background-position: center;
 }
@@ -403,7 +403,7 @@ ul{
 #termekpage{
     padding-top: 90px;
     padding-bottom: 90px;
-    background-image: url(clothingbackground.jpg);
+    background-image: url(kepek/clothingbackground.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

@@ -2,7 +2,7 @@
 function generateProductCard($product) {
     $html = "
     <div class='col-6 col-sm-6 col-md-6 col-lg-4 col-xl-3'>
-        <a href='product_details.php?id=" . $product['product_id'] . "' class='cardslinkek'>
+        <a href='productpage.php?id=" . $product['product_id'] . "' class='cardslinkek'>
             <div class='card rounded-0'>
                 <div id='termek" . $product['product_id'] . "' class='carousel slide' data-bs-interval='false'>
                     <div class='carousel-inner'>
@@ -28,7 +28,7 @@ function generateProductCard($product) {
                 </div>
                 <div class='card-text-box'>
                     <span class='termeknev'>" . $product['product_name'] . "</span>
-                    <span class='termekar'>" . $product['product_price'] . " FT</span>
+                    <span class='termekar'>" . number_format($product['product_price'], 0, ',', ' ') . " FT</span> 
                 </div>
                 <button type='button' class='btn btn-dark btn-block rounded-0'>Megtekintés</button>
             </div>
