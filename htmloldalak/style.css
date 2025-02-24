@@ -649,3 +649,23 @@ footer h5{
     height: 100%;
 
 }
+
+#cartpart {
+    min-height: 100vh; /* Ensure cart section fills the screen */
+    display: flex;
+    flex-direction: column;
+}
+
+#cartpart .cart-section {
+    flex-grow: 1; /* Allows the section to expand if needed */
+    padding-top: 90px;
+    padding-bottom: 90px;
+    background-image: url(clothingbackground.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/*.cartbigbox{
+    height: 500px;
+}*/
