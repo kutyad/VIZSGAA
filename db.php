@@ -1,18 +1,17 @@
 <?php
+
 function getDatabaseConnection() {
-    $servername = "localhost";
+    $host = "localhost";
     $username = "root";
     $password = "";
-    $database = "rtmdb";
+    $database = "rtmstoredb";
 
-    // Kapcsolat létrehozása
-    $connection = new mysqli($servername, $username, $password, $database);
+    $conn = new mysqli($host, $username, $password, $database);
 
-    // Hibakezelés
-    if ($connection->connect_error) {
-        die("MySQL connect fail: " . $connection->connect_error);
+    if ($conn->connect_error) {
+        die("Nem elérhető: " . $conn->connect_error);
     }
 
-    return $connection;
+    return $conn;
 }
 ?>

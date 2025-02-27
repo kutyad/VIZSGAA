@@ -1,30 +1,32 @@
 <?php
-include "layout/header.php";
+include "header.php";
+
+include "loginform.php";
 ?>
 
     <section id="carouselresz">
-      <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+    <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="ferfi.PNG" class="d-block w-100" alt="Férfi kabátok">
+                <img src="kepek/ferfi.PNG" class="d-block w-100" alt="Férfi kabátok">
                 <div class="carousel-overlay"></div>
                 <div class="carousel-caption">
                     <h5>Férfi termékek</h5>
                     <h1>Kabátok & Pulóverek</h1>
-                    <a href="#" class="btn btn-primary rounded-0">Vásárlás</a>
+                    <a href="menpage.php" class="btn btn-primary rounded-0">Vásárlás</a>
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="no.PNG" class="d-block w-100" alt="Női kábatok">
+                <img src="kepek/no.PNG" class="d-block w-100" alt="Női kábatok">
                 <div class="carousel-overlay"></div>
                 <div class="carousel-caption">
                     <h5>Női termékek</h5>
                     <h1>Kabátok & Pulóverek</h1>
-                    <a href="#" class="btn btn-light rounded-0">Vásárlás</a>
+                    <a href="womenpage.php" class="btn btn-light rounded-0">Vásárlás</a>
                 </div>
             </div>
             <div class="carousel-item">
-              <img src="ferfiingek.PNG" class="d-block w-100" alt="Női kábatok">
+              <img src="kepek/ferfiingek.PNG" class="d-block w-100" alt="Női kábatok">
               <div class="carousel-overlay"></div>
               <div class="carousel-caption">
                   <h5>Férfi termékek</h5>
@@ -33,7 +35,7 @@ include "layout/header.php";
               </div>
             </div>
             <div class="carousel-item">
-              <img src="no.PNG" class="d-block w-100" alt="Női kábatok">
+              <img src="kepek/no.PNG" class="d-block w-100" alt="Női kábatok">
               <div class="carousel-overlay"></div>
               <div class="carousel-caption">
                   <h5>Női termékek</h5>
@@ -42,7 +44,7 @@ include "layout/header.php";
               </div>
             </div>
             <div class="carousel-item">
-              <img src="no.PNG" class="d-block w-100" alt="Női kábatok">
+              <img src="kepek/no.PNG" class="d-block w-100" alt="Női kábatok">
               <div class="carousel-overlay"></div>
               <div class="carousel-caption">
                   <h5>Férfi termékek</h5>
@@ -51,7 +53,7 @@ include "layout/header.php";
               </div>
             </div>
             <div class="carousel-item">
-              <img src="no.PNG" class="d-block w-100" alt="Női kábatok">
+              <img src="kepek/no.PNG" class="d-block w-100" alt="Női kábatok">
               <div class="carousel-overlay"></div>
               <div class="carousel-caption">
                   <h5>Női termékek</h5>
@@ -59,7 +61,6 @@ include "layout/header.php";
                   <a href="#" class="btn btn-light rounded-0">Vásárlás</a>
               </div>
             </div>
-
         </div>
     
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
@@ -74,12 +75,12 @@ include "layout/header.php";
     </section>
 
     <section class="indexferficards">
-      <div class="container mt-5">
+    <div class="container mt-5">
         <div class="row mb-3">
           <div class="col-md-6">
-            <a href="ferfi.html" class="cardslinkek">
+            <a href="menpage.php" class="cardslinkek">
             <div class="card rounded-0">
-              <img src="ferfi1.avif" class="card-img-top rounded-0" alt="ferfi">
+              <img src="kepek/ferfi1.avif" class="card-img-top rounded-0" alt="ferfi">
               <div class="card-text-box">
                 Férfi ruhák
               </div>
@@ -87,9 +88,9 @@ include "layout/header.php";
             </a>
           </div>
           <div class="col-md-6">
-            <a href="noi.html" class="cardslinkek">
+            <a href="womenpage.php" class="cardslinkek">
             <div class="card rounded-0">
-              <img src="no1.avif" class="card-img-top rounded-0" alt="no">
+              <img src="kepek/no1.avif" class="card-img-top rounded-0" alt="no">
               <div class="card-text-box">
                 Női ruhák
               </div>
@@ -99,7 +100,14 @@ include "layout/header.php";
         </div>
     </section>
 
+    <?php 
+      include "men_newest_products.php";
+      ?>
+      
+      <?php
+      include "women_newest_products.php"
+      ?>
 
 <?php
-include "layout/footer.php";
+include "footer.php";
 ?>
