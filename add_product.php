@@ -1,5 +1,15 @@
 <?php
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+if (!isset($_SESSION["username"]) || $_SESSION["is_admin"] != 1) {
+    header("Location: index.php");
+    exit();
+}
+
 require_once 'db.php';
+
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $product_name = $_POST["product_name"];

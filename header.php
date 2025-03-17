@@ -46,7 +46,7 @@ if (session_status() === PHP_SESSION_NONE) {
                                 <?php
                                 if ($_SESSION["is_admin"] == 1) {
                                 ?>
-                                    <a class="dropdown-item" href="admin_panel.php">Admin Panel</a>
+                                    <a class="dropdown-item" href="add_product.php">Admin Panel</a>
                                 <?php } ?>
                             </div>
                         <?php
