@@ -651,13 +651,13 @@ footer h5{
 }
 
 #cartpart {
-    min-height: 100vh; /* Ensure cart section fills the screen */
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
 }
 
 #cartpart .cart-section {
-    flex-grow: 1; /* Allows the section to expand if needed */
+    flex-grow: 1;
     padding-top: 90px;
     padding-bottom: 90px;
     background-image: url(clothingbackground.jpg);
