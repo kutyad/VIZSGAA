@@ -39,7 +39,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if ($quantity > $available_stock) {
             $_SESSION['error'] = "Nincs ennyi termék raktáron a kiválasztott méretben.";
         } else {
-            // add to cart majd ide jon
+            $conn = getDatabaseConnection();
+            $stmt = $conn->prepare("CALL AddToCart(?, ?, ?, ?)");
+            $stmt->bind_param("iiis", $_SESSION['user_id'], $product_id, $quantity, $selected_size);
+            $stmt->execute();
+            $stmt->close();
+            $conn->close();
+            
             $_SESSION['success'] = "A termék sikeresen hozzáadva a kosárhoz!";
         }
     }

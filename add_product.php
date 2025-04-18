@@ -68,69 +68,67 @@ function uploadImage($file) {
 }
 ?>
 
-<!DOCTYPE html>
-<html lang="hu">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Termék hozzáadása</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body>
+<?php
+include "header.php";
+
+include "loginform.php";
+?>
+<section id="cartpart">
+<div class="cart-section">
     <div class="container mt-5">
         <h1>Új termék hozzáadása</h1>
         <form action="add_product.php" method="post" enctype="multipart/form-data">
 
             <div class="mb-3">
-                <label for="product_name" class="form-label">Termék neve</label>
+                <label for="product_name" class="form-label text-light">Termék neve</label>
                 <input type="text" class="form-control" id="product_name" name="product_name" required>
             </div>
 
             <div class="mb-3">
-                <label for="product_price" class="form-label">Ár (HUF)</label>
+                <label for="product_price" class="form-label text-light">Ár (HUF)</label>
                 <input type="number" class="form-control" id="product_price" name="product_price" required>
             </div>
 
             <div class="mb-3">
-                <label for="product_image_1" class="form-label">1. kép</label>
+                <label for="product_image_1" class="form-label text-light">1. kép</label>
                 <input type="file" class="form-control" id="product_image_1" name="product_image_1" required>
             </div>
             <div class="mb-3">
-                <label for="product_image_2" class="form-label">2. kép</label>
+                <label for="product_image_2" class="form-label text-light">2. kép</label>
                 <input type="file" class="form-control" id="product_image_2" name="product_image_2" required>
             </div>
             <div class="mb-3">
-                <label for="product_image_3" class="form-label">3. kép</label>
+                <label for="product_image_3" class="form-label text-light">3. kép</label>
                 <input type="file" class="form-control" id="product_image_3" name="product_image_3" required>
             </div>
             <div class="mb-3">
-                <label for="product_image_4" class="form-label">4. kép</label>
+                <label for="product_image_4" class="form-label text-light">4. kép</label>
                 <input type="file" class="form-control" id="product_image_4" name="product_image_4" required>
             </div>
 
             <div class="mb-3">
-                <label for="product_xs_quantity" class="form-label">XS méret mennyiség</label>
+                <label for="product_xs_quantity" class="form-label text-light">XS méret mennyiség</label>
                 <input type="number" class="form-control" id="product_xs_quantity" name="product_xs_quantity" required>
             </div>
             <div class="mb-3">
-                <label for="product_s_quantity" class="form-label">S méret mennyiség</label>
+                <label for="product_s_quantity" class="form-label text-light">S méret mennyiség</label>
                 <input type="number" class="form-control" id="product_s_quantity" name="product_s_quantity" required>
             </div>
             <div class="mb-3">
-                <label for="product_m_quantity" class="form-label">M méret mennyiség</label>
+                <label for="product_m_quantity" class="form-label text-light">M méret mennyiség</label>
                 <input type="number" class="form-control" id="product_m_quantity" name="product_m_quantity" required>
             </div>
             <div class="mb-3">
-                <label for="product_l_quantity" class="form-label">L méret mennyiség</label>
+                <label for="product_l_quantity" class="form-label text-light">L méret mennyiség</label>
                 <input type="number" class="form-control" id="product_l_quantity" name="product_l_quantity" required>
             </div>
             <div class="mb-3">
-                <label for="product_xl_quantity" class="form-label">XL méret mennyiség</label>
+                <label for="product_xl_quantity" class="form-label text-light">XL méret mennyiség</label>
                 <input type="number" class="form-control" id="product_xl_quantity" name="product_xl_quantity" required>
             </div>
 
             <div class="mb-3">
-                <label for="gender" class="form-label">Nem</label>
+                <label for="gender" class="form-label text-light">Nem</label>
                 <select class="form-select" id="gender" name="gender" required>
                     <option value="Férfi">Férfi</option>
                     <option value="Nő">Nő</option>
@@ -138,7 +136,7 @@ function uploadImage($file) {
             </div>
 
             <div class="mb-3">
-                <label for="category" class="form-label">Kategória</label>
+                <label for="category" class="form-label text-light">Kategória</label>
                 <select class="form-select" id="category" name="category" required>
                     <option value="Kabátok & Pulóverek">Kabátok & Pulóverek</option>
                     <option value="Ingek & Pólók">Ingek & Pólók</option>
@@ -147,8 +145,11 @@ function uploadImage($file) {
                 </select>
             </div>
 
-            <button type="submit" class="btn btn-primary">Termék hozzáadása</button>
+            <button type="submit" class="btn btn-dark">Termék hozzáadása</button>
         </form>
     </div>
+</div>
+</section>
+
 </body>
 </html>

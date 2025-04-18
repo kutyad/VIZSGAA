@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>R&T&M</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <section id="cartpart">
+    <div class="cart-section">
+    <section id="checkout" class="py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="p-4 bg-light border rounded-0 shadow-sm">
+                        <h2 class="mb-4">Szállítási adatok</h2>
+    
+                        <form id="homeForm" method="POST" action="checkoutpage.php" style="display: block;">
+                            <input type="hidden" name="delivery_type" value="home">
+                            <div class="row g-3 mb-4">
+                                <div class="col-md-12">
+                                    <select class="form-control rounded-0" name="salutation" required>
+                                        <option value="Úr">Úr</option>
+                                        <option value="Hölgy">Hölgy</option>
+                                        <option value="Egyéb">Egyéb</option>
+                                        <option value="Nem kívánom">Nem kívánom pontosítani</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control rounded-0" name="first_name" placeholder="Keresztnév" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control rounded-0" name="last_name" placeholder="Vezetéknév" required>
+                                </div>
+                                <div class="col-md-12">
+                                    <select class="form-control rounded-0" name="country" required>
+                                        <option value="Magyarország">Magyarország</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-8">
+                                    <input type="text" class="form-control rounded-0" name="street" placeholder="Utca" required>
+                                </div>
+                                <div class="col-md-4">
+                                    <input type="text" class="form-control rounded-0" name="house_number" placeholder="Házszám" required>
+                                </div>
+                                <div class="col-md-4">
+                                    <input type="text" class="form-control rounded-0" name="zip_code" placeholder="Irányítószám" required>
+                                </div>
+                                <div class="col-md-8">
+                                    <input type="text" class="form-control rounded-0" name="city" placeholder="Város" required>
+                                </div>
+                                <div class="col-md-12">
+                                    <input type="tel" class="form-control rounded-0" name="phone" placeholder="Telefonszám" required>
+                                </div>
+                            </div>
+                            <div class="bg-light p-4 mt-4">
+                                <p class="mb-3">Fizetési mód: <b>Utánvétes fizetés</b></p>
+                                <button type="submit" class="btn btn-dark rounded-0 w-100 py-3">
+                                    Fizetési kötelezettséggel járó megrendelés
+                                    <p><b>Teljes ár:</b></p>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    </div>
+    </section>
+
+</body>
+</html>

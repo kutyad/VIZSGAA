@@ -650,3 +650,25 @@ footer h5{
     height: 100%;
 
 }
+
+/* cart */
+
+#cartpart {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+#cartpart .cart-section {
+    flex-grow: 1;
+    padding-top: 90px;
+    padding-bottom: 90px;
+    background-image: url(kepek/clothingbackground.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.cartbigbox {
+    max-width: 100%;
+}

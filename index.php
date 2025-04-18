@@ -8,7 +8,7 @@ include "loginform.php";
     <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="kepek/ferfi.PNG" class="d-block w-100" alt="Férfi kabátok">
+                <img src="kepek/7efd95c58b0e55276c876895638bfde5.jpg" class="d-block w-100" alt="Férfi kabátok">
                 <div class="carousel-overlay"></div>
                 <div class="carousel-caption">
                     <h5>Férfi termékek</h5>
@@ -17,7 +17,7 @@ include "loginform.php";
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="kepek/no.PNG" class="d-block w-100" alt="Női kábatok">
+                <img src="kepek/no.PNG" class="d-block w-100" alt="Kabátok & Pulóverek">
                 <div class="carousel-overlay"></div>
                 <div class="carousel-caption">
                     <h5>Női termékek</h5>
@@ -26,39 +26,39 @@ include "loginform.php";
                 </div>
             </div>
             <div class="carousel-item">
-              <img src="kepek/ferfiingek.PNG" class="d-block w-100" alt="Női kábatok">
+              <img src="kepek/ferfiingek.PNG" class="d-block w-100" alt="Ingek & Pólók">
               <div class="carousel-overlay"></div>
               <div class="carousel-caption">
                   <h5>Férfi termékek</h5>
                   <h1>Ingek & Pólók</h1>
-                  <a href="#" class="btn btn-light rounded-0">Vásárlás</a>
+                  <a href="mencategorypolokingek.php" class="btn btn-light rounded-0">Vásárlás</a>
               </div>
             </div>
             <div class="carousel-item">
-              <img src="kepek/no.PNG" class="d-block w-100" alt="Női kábatok">
+              <img src="kepek/03a0648c8c34dc1cc88066c738746100.jpg" class="d-block w-100" alt="Blúzok & Pólók">
               <div class="carousel-overlay"></div>
               <div class="carousel-caption">
                   <h5>Női termékek</h5>
                   <h1>Blúzok & Pólók</h1>
-                  <a href="#" class="btn btn-light rounded-0">Vásárlás</a>
+                  <a href="womenbluzokpolok.php" class="btn btn-light rounded-0">Vásárlás</a>
               </div>
             </div>
             <div class="carousel-item">
-              <img src="kepek/no.PNG" class="d-block w-100" alt="Női kábatok">
+              <img src="kepek/3e34aaac638eb7d3e1a440ea96fd1d8b.jpg" class="d-block w-100" alt="Nadrágok & Rövidnadrágok">
               <div class="carousel-overlay"></div>
               <div class="carousel-caption">
                   <h5>Férfi termékek</h5>
                   <h1>Nadrágok & Rövidnadrágok</h1>
-                  <a href="#" class="btn btn-light rounded-0">Vásárlás</a>
+                  <a href="mencategorynadragok.php" class="btn btn-light rounded-0">Vásárlás</a>
               </div>
             </div>
             <div class="carousel-item">
-              <img src="kepek/no.PNG" class="d-block w-100" alt="Női kábatok">
+              <img src="kepek/26eb6a18ebe3bf09fd22a8190c1f4d06.jpg" class="d-block w-100" alt="Nadrágok & Rövidnadrágok">
               <div class="carousel-overlay"></div>
               <div class="carousel-caption">
                   <h5>Női termékek</h5>
                   <h1>Nadrágok & Rövidnadrágok</h1>
-                  <a href="#" class="btn btn-light rounded-0">Vásárlás</a>
+                  <a href="womennadragok.php" class="btn btn-light rounded-0">Vásárlás</a>
               </div>
             </div>
         </div>
